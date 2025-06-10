@@ -1,5 +1,5 @@
 [package]
-name = "scailx-ui"
+name = "scailx-app"
 version = "0.1.0"
 edition = "2024"
 

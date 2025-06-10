@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cargo-build-ARM",
+            "type": "cargo",
+            "command": "build",
+            "args": [
+                "--target=aarch64-unknown-linux-gnu"
+            ],
+            "problemMatcher": [ "$rustc" ],
+            "group": "build"
+        },
+        {
+            "label": "start-remote-lldb",
+            "type": "shell",
+            "command": "ssh",
+            "runOptions": {
+                "runOn": "folderOpen"
+            },
+            "presentation": { "reveal": "silent" },
+            "args": [
+                "scailx-ai.local",
+                "lldb-server platform --listen '*:17777' --server > /dev/null 2>&1 &"
+            ],
+        },
+        {
+            "label": "stop-remote-lldb",
+            "type": "shell",
+            "command": "ssh",
+            "args": [
+                "scailx-ai.local",
+                "killall lldb-server"
+            ],
+            "presentation": { "reveal": "silent" },
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "RemoteLaunch",
+            "sourceLanguages": ["rust"],
+            "initCommands": [
+                "platform select remote-linux",
+                "platform connect connect://scailx-ai.local:17777",
+                "settings set target.inherit-env false",       // if not set, the debug-target will inherit the environment of the host machine
+            ],
+            "env": {  },
+
+            "targetCreateCommands": [
+                "target create scailx-app"
+            ],
+        }
+    ]
+}
