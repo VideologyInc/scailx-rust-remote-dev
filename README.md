@@ -32,12 +32,7 @@ This repository provides a simple example of remote lldb development.
     ```bash
     rustup target add aarch64-unknown-linux-gnu
     ```
-    Modify `~/.cargo/config` to include:
-    ```toml
-    [target.aarch64-unknown-linux-gnu]
-    linker = "aarch64-linux-gnu-gcc-12"
-    ```
-
+    
 - Try to build for target:
     ```bash
     cargo build --target aarch64-unknown-linux-gnu
